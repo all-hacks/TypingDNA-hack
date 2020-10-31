@@ -1,0 +1,129 @@
+postman
+
+single quote in jsan not valid wiht postman???
+
+
+{"BUSINESS SERVICES ":0,"CONSTRUCTION ":1,"LAND TRANSPORT ":0,"TRADING & WHOLESALE":0,"Paid-up Capital":"1300001","Loan Amount":"70822","Loan Tenure":60,"Non-Current Assets 2018":"2586178","Non-Current Assets 2019":"6301262","Current Assets 2018":"33811435","Current Assets 2019":"12873640","Total Assets 2018":"36397613","Total Assets 2019":"19174902","Current Liabilities 2018":"33680898","Current Liabilities 2019":"15057304","Total Liabilities 2018":"33988215","Total Liabilities 2019":"15108613","Share Capital 2018":"755000","Share Capital 2019":"755000","Retained Earnings 2018":"1654398","Retained Earnings 2019":"3311289","Networth 2018":"2409398","Networth 2019":"4066289","Revenue 2018":"83250147","Revenue 2019":"42158896","NPBT 2018":"1104595","NPBT 2019":"2204630","NPAT 2018":"774893","NPAT 2019":"1656891"}
+
+
+
+https://nasa-orix-2020-api.herokuapp.com/classify
+
+////
+'{}'
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>400 Bad Request</title>
+<h1>Bad Request</h1>
+<p>The browser (or proxy) sent a request that this server could not understand.</p>
+
+/////
+
+"{}"
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+at server log:
+ValueError: Found array with 0 feature(s) (shape=(1, 0)) while a minimum of 1 is required.
+
+////
+
+{}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+at server log:
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+
+////
+
+{"BUSINESS SERVICES ":0,"CONSTRUCTION ":1,"LAND TRANSPORT ":0,"TRADING & WHOLESALE":0,"Paid-up Capital":"1300001","Loan Amount":"70822","Loan Tenure":60,"Non-Current Assets 2018":"2586178","Non-Current Assets 2019":"6301262","Current Assets 2018":"33811435","Current Assets 2019":"12873640","Total Assets 2018":"36397613","Total Assets 2019":"19174902","Current Liabilities 2018":"33680898","Current Liabilities 2019":"15057304","Total Liabilities 2018":"33988215","Total Liabilities 2019":"15108613","Share Capital 2018":"755000","Share Capital 2019":"755000","Retained Earnings 2018":"1654398","Retained Earnings 2019":"3311289","Networth 2018":"2409398","Networth 2019":"4066289","Revenue 2018":"83250147","Revenue 2019":"42158896","NPBT 2018":"1104595","NPBT 2019":"2204630","NPAT 2018":"774893","NPAT 2019":"1656891"}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+at server log:
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+
+//////
+
+'{"BUSINESS SERVICES ":0,"CONSTRUCTION ":1,"LAND TRANSPORT ":0,"TRADING & WHOLESALE":0,"Paid-up Capital":"1300001","Loan Amount":"70822","Loan Tenure":60,"Non-Current Assets 2018":"2586178","Non-Current Assets 2019":"6301262","Current Assets 2018":"33811435","Current Assets 2019":"12873640","Total Assets 2018":"36397613","Total Assets 2019":"19174902","Current Liabilities 2018":"33680898","Current Liabilities 2019":"15057304","Total Liabilities 2018":"33988215","Total Liabilities 2019":"15108613","Share Capital 2018":"755000","Share Capital 2019":"755000","Retained Earnings 2018":"1654398","Retained Earnings 2019":"3311289","Networth 2018":"2409398","Networth 2019":"4066289","Revenue 2018":"83250147","Revenue 2019":"42158896","NPBT 2018":"1104595","NPBT 2019":"2204630","NPAT 2018":"774893","NPAT 2019":"1656891"}'
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>400 Bad Request</title>
+<h1>Bad Request</h1>
+<p>The browser (or proxy) sent a request that this server could not understand.</p>
+
+
+at log:
+nil
+
+
+/////
+
+
+{'BUSINESS SERVICES ':0,'CONSTRUCTION ':1,'LAND TRANSPORT ':0,'TRADING & WHOLESALE':0,'Paid-up Capital':'1300001','Loan Amount':'70822','Loan Tenure':60,'Non-Current Assets 2018':'2586178','Non-Current Assets 2019':'6301262','Current Assets 2018':'33811435','Current Assets 2019':'12873640','Total Assets 2018':'36397613','Total Assets 2019':'19174902','Current Liabilities 2018':'33680898','Current Liabilities 2019':'15057304','Total Liabilities 2018':'33988215','Total Liabilities 2019':'15108613','Share Capital 2018':'755000','Share Capital 2019':'755000','Retained Earnings 2018':'1654398','Retained Earnings 2019':'3311289','Networth 2018':'2409398','Networth 2019':'4066289','Revenue 2018':'83250147','Revenue 2019':'42158896','NPBT 2018':'1104595','NPBT 2019':'2204630','NPAT 2018':'774893','NPAT 2019':'1656891'}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>400 Bad Request</title>
+<h1>Bad Request</h1>
+<p>The browser (or proxy) sent a request that this server could not understand.</p>
+
+at log:
+nil
+
+
+/////
+
+"{'BUSINESS SERVICES ':0,'CONSTRUCTION ':1,'LAND TRANSPORT ':0,'TRADING & WHOLESALE':0,'Paid-up Capital':'1300001','Loan Amount':'70822','Loan Tenure':60,'Non-Current Assets 2018':'2586178','Non-Current Assets 2019':'6301262','Current Assets 2018':'33811435','Current Assets 2019':'12873640','Total Assets 2018':'36397613','Total Assets 2019':'19174902','Current Liabilities 2018':'33680898','Current Liabilities 2019':'15057304','Total Liabilities 2018':'33988215','Total Liabilities 2019':'15108613','Share Capital 2018':'755000','Share Capital 2019':'755000','Retained Earnings 2018':'1654398','Retained Earnings 2019':'3311289','Networth 2018':'2409398','Networth 2019':'4066289','Revenue 2018':'83250147','Revenue 2019':'42158896','NPBT 2018':'1104595','NPBT 2019':'2204630','NPAT 2018':'774893','NPAT 2019':'1656891'}"
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+at log:
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+
+
+/////
+
+"{\"BUSINESS SERVICES \":0,\"CONSTRUCTION \":1,\"LAND TRANSPORT \":0,\"TRADING & WHOLESALE\":0,\"Paid-up Capital\":\"1300001\",\"Loan Amount\":\"70822\",\"Loan Tenure\":60,\"Non-Current Assets 2018\":\"2586178\",\"Non-Current Assets 2019\":\"6301262\",\"Current Assets 2018\":\"33811435\",\"Current Assets 2019\":\"12873640\",\"Total Assets 2018\":\"36397613\",\"Total Assets 2019\":\"19174902\",\"Current Liabilities 2018\":\"33680898\",\"Current Liabilities 2019\":\"15057304\",\"Total Liabilities 2018\":\"33988215\",\"Total Liabilities 2019\":\"15108613\",\"Share Capital 2018\":\"755000\",\"Share Capital 2019\":\"755000\",\"Retained Earnings 2018\":\"1654398\",\"Retained Earnings 2019\":\"3311289\",\"Networth 2018\":\"2409398\",\"Networth 2019\":\"4066289\",\"Revenue 2018\":\"83250147\",\"Revenue 2019\":\"42158896\",\"NPBT 2018\":\"1104595\",\"NPBT 2019\":\"2204630\",\"NPAT 2018\":\"774893\",\"NPAT 2019\":\"1656891\"}"
+
+
+["BAD"]
+
+
+
+
+///////////////////
+
+"{\"BUSINESS SERVICES \":0,\"CONSTRUCTION \":1,\"LAND TRANSPORT \":0,\"TRADING & WHOLESALE\":0,\"Paid-up Capital\":\"1000000\",\"Loan Amount\":\"417930\",\"Loan Tenure\":36,\"Non-Current Assets 2018\":\"971168\",\"Non-Current Assets 2019\":\"3434449\",\"Current Assets 2018\":\"25175974\",\"Current Assets 2019\":\"25003899\",\"Total Assets 2018\":\"26147142\",\"Total Assets 2019\":\"28438348\",\"Current Liabilities 2018\":\"15100681\",\"Current Liabilities 2019\":\"16361081\",\"Total Liabilities 2018\":\"15293522\",\"Total Liabilities 2019\":\"16763213\",\"Share Capital 2018\":\"1000000\",\"Share Capital 2019\":\"1000000\",\"Retained Earnings 2018\":\"9853620\",\"Retained Earnings 2019\":\"10675135\",\"Networth 2018\":\"10853620\",\"Networth 2019\":\"11675135\",\"Revenue 2018\":\"49153682\",\"Revenue 2019\":\"30067099\",\"NPBT 2018\":\"1152974\",\"NPBT 2019\":\"1254198\",\"NPAT 2018\":\"869503\",\"NPAT 2019\":\"921515\"}"
+
+
+
+
+
+////
+
+
+
+
+
+
+
+
+
+
+
+
+

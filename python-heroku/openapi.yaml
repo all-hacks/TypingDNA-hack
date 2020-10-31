@@ -1,0 +1,32 @@
+openapi: "3.0.0"
+
+info:
+  title: "Useless sample api"
+  description: "A simple api that returns a 200 if you ping it."
+  version: "1.0"
+
+paths:
+  /ping:
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+  /classify:
+    post:
+      description: "Classify loan"
+
+      requestBody:
+        description: "Json with single field containing text to extract entities from"
+        required: true
+        content:
+          application/json: {}
+
+      responses:
+        '200':
+          description: "Returns loan classification"
+          content: 
+           application/json: {}

@@ -1,0 +1,182 @@
+extends layout
+block content
+    div.container(style={"padding":"0"})
+        include ./flash
+        div.step(id="step_username", style={"display":"inline", "opacity": "1"})
+            //Select user
+            p
+                h2 Automated Loan Onboarding
+            p
+                h4 Enter the details of your loan application
+            p Key in the following info about your company, click next to find out whether the loan is approved.
+            p Notes: NPBT (Net Profit Before Taxes), NPAT (Net Profit After Taxes)
+            br
+            form(method='post' action='/result' onsubmit=' return checkApplication(this)')
+                input(type="hidden" name="textid")
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Industry
+                    select.form-control(name="industry", id="industry")
+                        each val in ["CONSTRUCTION", "BUSINESS SERVICES", "LAND TRANSPORT", "TRADING & WHOLESALE"]
+                            option=val
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Paid-up Capital
+                    input.form-control(type="text", id="paid-up", name="paid-up", value="4000000" placeholder="4000000")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Loan Amount
+                    input.form-control(type="text", id="amount", name="amount", value="520000", placeholder="520000")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Loan Tenure
+                    input.form-control(type="text", id="tenure", name="tenure", value="36", placeholder="36")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Fixed Assets 2018
+                    input.form-control(type="text", id="fa-2018", name="fa-2018", value="1002146", placeholder="1002146")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Fixed Assets 2019
+                    input.form-control(type="text", id="fa-2019", name="fa-2019", value="890994", placeholder="890994")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Current Assets 2018
+                    input.form-control(type="text", id="ca-2018", name="ca-2018", value="5282403" placeholder="5282403")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Current Assets 2019
+                    input.form-control(type="text", id="ca-2019", name="ca-2019", value="12469078" placeholder="12469078")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Current Liabilities 2018
+                    input.form-control(type="text", id="cl-2018", name="cl-2018", value="3657791" placeholder="3657791")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Current Liabilities 2019
+                    input.form-control(type="text", id="cl-2019", name="cl-2019", value="10845221" placeholder="10845221")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Total Liabilities 2018
+                    input.form-control(type="text", id="tl-2018", name="tl-2018", value="4258349" placeholder="4258349")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Total Liabilities 2019
+                    input.form-control(type="text", id="tl-2019", name="tl-2019", value="11349742" placeholder="11349742")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Share Capital 2018
+                    input.form-control(type="text", id="sc-2018", name="sc-2018", value="1000000" placeholder="1000000")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Share Capital 2019
+                    input.form-control(type="text", id="sc-2019", name="sc-2019", value="1000000" placeholder="1000000")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Retained Earnings 2018
+                    input.form-control(type="text", id="re-2018", name="re-2018", value="1026200" placeholder="1026200")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Retained Earnings 2019
+                    input.form-control(type="text", id="re-2019", name="re-2019", value="1010330" placeholder="1010330")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Networth 2018
+                    input.form-control(type="text", id="n-2018", name="n-2018", value="2026200" placeholder="2026200")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Networth 2019
+                    input.form-control(type="text", id="n-2019", name="n-2019", value="2101330" placeholder="2010330")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Revenue 2018
+                    input.form-control(type="text", id="r-2018", name="r-2018", value="16290037" placeholder="16290037")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) Revenue 2019
+                    input.form-control(type="text", id="r-2019", name="r-2019", value="33637929" placeholder="33637927")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) NPBT 2018
+                    input.form-control(type="text", id="npbt-2018", name="npbt-2018", value="191684" placeholder="191684")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) NPBT 2019
+                    input.form-control(type="text", id="npbt-2019", name="npbt-2019", value="46330" placeholder="46330")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) NPAT 2018
+                    input.form-control(type="text", id="npat-2018", name="npat-2018", value="108884" placeholder="108884")
+                br
+                div.input-group
+                    span.input-group-addon(style={"width": "200px", "text-align": "left"}) NPAT 2019
+                    input.form-control(type="text", id="npat-2019", name="npat-2019", value="-15870" placeholder="-15870")
+                br
+                div(style={"padding-top": "20px", "padding-bottom": "50px"})
+                    button.btn.btn-colors.btn-s( role="button", id="btn_next", type="submit")
+                        b Next
+        //Loading
+        div.step(id="step_loading")
+            br
+            p Loading...
+    script.
+        function validateUser(form) {
+            if (!form) {
+                return false;
+            }
+            form.textid.value = tdna.getTextId(currentQuote);
+            var username = document.getElementById("username");
+            if(username && username.value.length > 5) {
+
+                swapContent('step_username', 'step_loading');
+                setCookie('demousername',username.value);
+                return true;
+            } else {
+                alert('Your username/id should be at least 6 characters in length');
+                return false;
+            }
+        }
+
+        var fieldName = {
+            "npat-2019": "NPAT 2019",
+            "npat-2018": "NPAT 2018",
+            "npbt-2018": "NPBT 2018",
+            "npbt-2019": "NPBT 2019",
+            "r-2018": "Revenue 2018",
+            "r-2019": "Revenue 2019",
+            "n-2018": "Networth 2018",
+            "n-2019": "Networth 2019",
+            "re-2018": "Retained Earnings 2018",
+            "re-2019": "Retained Earnings 2019"
+        };
+
+        function checkApplication(form) {
+            if (!form) { return false; }
+
+            var data = {};
+            for ( let item in form ) {
+                if (form[item] != undefined && form[item].type !== undefined) {
+                    console.log(form[item].type, item, form[item].name, form[item].value);
+                    data[form[item].name] = form[item].value;
+
+                    if ((form[item].type == "text" || form[item].type == "select-one") 
+                        && (form[item].value == undefined || form[item].value == "")) {
+                        alert('Empty ' + fieldName[form[item].name] + ' is not allowed.');
+                        //alert('empty');
+                        return false;
+                    }
+                }
+            }
+
+            /*
+            data.industry = form.industry.value;
+            data["paid-up"] = form["paid-up"].value;
+            data.amount = form.amount.value;
+            data.tenure = form.tenure.value;
+            */
+            
+            console.log(JSON.stringify(data));
+
+            //alert(form.industry.value);
+            return true;
+        }
+        /** checks if Enter is pressed on text forms and calls the next function */
